@@ -1,0 +1,3 @@
+[submodule "show-my-app/Sub-Module"]
+	path = show-my-app/Sub-Module
+	url = https://github.com/show-my-app/OSX-ObjectiveC.git
