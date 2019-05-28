@@ -14,10 +14,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view.
+    ShowMyAppInstance = [[ShowMyApp alloc] init];
+    [ShowMyAppInstance setReferencedUser:true];
+    [ShowMyAppInstance setReccordID:@"test1"];
 }
-
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
@@ -25,91 +25,9 @@
     // Update the view, if already loaded.
 }
 
--(ShowMyApp*) FormAnalyze
-{
-    ShowMyApp *tShowMyAppInstance = [[ShowMyApp alloc] init];
-    [tShowMyAppInstance setAppName:[appNameTextField stringValue]];
-    [tShowMyAppInstance setDesign:[designSegmentedControl selectedSegment]];
-    [tShowMyAppInstance setDesignColor:[designColor color]];
-    [tShowMyAppInstance setDesignColorBackground:[designColorBackground color]];
-    [tShowMyAppInstance setTiny:[tinySwith state]];
-    [tShowMyAppInstance setOneIconOnly:[oneIconOnlySwith state]];
-    
-    [tShowMyAppInstance setReferencedUser:[referencedUserSwith state]];
-    [tShowMyAppInstance setReccordID:[reccordID stringValue]];
-    
-    [tShowMyAppInstance setIOS_iPhone_BundleID:[iPhoneTextField stringValue]];
-    [tShowMyAppInstance setIOS_iPad_BundleID:[iPadTextField stringValue]];
-    [tShowMyAppInstance setMacOS_BundleID:[macOSTextField stringValue]];
-    [tShowMyAppInstance setTvOS_BundleID:[tvOSTextField stringValue]];
-    
-    [tShowMyAppInstance setAndroid_BundleID:[androidTextField stringValue]];
-    [tShowMyAppInstance setAndroid_Tablet_BundleID:[androidTabletTextField stringValue]];
-    
-    [tShowMyAppInstance setWindows_BundleID:[windowsTextField stringValue]];
-    [tShowMyAppInstance setWindows_Phone_BundleID:[windowsPhoneTextField stringValue]];
-    
-    [tShowMyAppInstance setSteam_BundleID:[windowsPhoneTextField stringValue]];
-    //    [tShowMyAppInstance setTiny:[tinySwith ]];
-    return tShowMyAppInstance;
-}
-
--(IBAction)Preview:(id)sSender {
-    
-    ShowMyApp *tShowMyApp = [self FormAnalyze];
-    ShowMyAppInstance = tShowMyApp;
-    [ShowMyAppInstance InsertFullURL:textURL];
-    [ShowMyAppInstance InsertTinyURL:textTinyURL];
-    [ShowMyAppInstance InsertFullQRCode:imageQRCode];
-    [ShowMyAppInstance InsertTinyQRCode:imageTinyQRCode];
-    [ShowMyAppInstance GetFullURL:^(NSURL * _Nonnull sURL) {
-        [self->webView loadRequest:[NSURLRequest requestWithURL:sURL]];
-    }];
-}
-
--(IBAction)ShareInWebBrowser:(id)sSender {
-    //NSLog(@" %s line %d",__FUNCTION__, __LINE__);
-    if (ShowMyAppInstance!=NULL)
-    {
-        [ShowMyAppInstance ShareInWebBrowser];
-    }
-}
-
--(IBAction)ShareFull:(id)sSender {
-    //NSLog(@" %s line %d",__FUNCTION__, __LINE__);
-    if (ShowMyAppInstance!=NULL)
-    {
-        [ShowMyAppInstance ShareFull:sSender];
-    }
-}
-
--(IBAction)ShareTiny:(id)sSender {
-    //NSLog(@" %s line %d",__FUNCTION__, __LINE__);
-    if (ShowMyAppInstance!=NULL)
-    {
-        [ShowMyAppInstance ShareTiny:sSender];
-    }
-}
-
--(IBAction)ShareFullQRCode:(id)sSender {
-    //NSLog(@" %s line %d",__FUNCTION__, __LINE__);
-    if (ShowMyAppInstance!=NULL)
-    {
-        [ShowMyAppInstance ShareFullQRCode:sSender];
-    }
-}
-
--(IBAction)ShareTinyQRCode:(id)sSender {
-    //NSLog(@" %s line %d",__FUNCTION__, __LINE__);
-    if (ShowMyAppInstance!=NULL)
-    {
-        [ShowMyAppInstance ShareTinyQRCode:sSender];
-    }
-}
-
 -(IBAction)ShareServiceTest:(id)sSender {
     NSLog(@" %s line %d",__FUNCTION__, __LINE__);
-    [[self FormAnalyze] Show];
+    [ShowMyAppInstance Show];
 }
 
 @end
