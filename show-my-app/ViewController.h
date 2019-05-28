@@ -19,16 +19,25 @@
     IBOutlet NSSegmentedControl *designSegmentedControl; // &d=x
     IBOutlet NSColorWell *designColor; // &c=x
     IBOutlet NSColorWell *designColorBackground; // &k=x
+    
+    IBOutlet NSButton *tinySwith;  // &t=0/1
+    IBOutlet NSButton *oneIconOnlySwith;  // &i=0/1
+    
+    IBOutlet NSButton *referencedUserSwith;
+    IBOutlet NSTextField *reccordID;  // &r=xxxxx
+    
     IBOutlet NSTextField *iPhoneTextField; // &a=xxxxx
     IBOutlet NSTextField *iPadTextField; // &b=xxxxx
     IBOutlet NSTextField *macOSTextField; // &m=xxxxx
     IBOutlet NSTextField *tvOSTextField; // &q=xxxxx
+    
     IBOutlet NSTextField *androidTextField;  // &g=xxxxx
     IBOutlet NSTextField *androidTabletTextField;  // &h=xxxxx
+    
     IBOutlet NSTextField *windowsTextField;  // &w=xxxxx
     IBOutlet NSTextField *windowsPhoneTextField;  // &x=xxxxx
+    
     IBOutlet NSTextField *steamTextField;  // &s=xxxxx
-    IBOutlet NSButton *tinySwith;  // &t=0/1
     
     IBOutlet NSTextField *textURL;
     IBOutlet NSTextField *textTinyURL;

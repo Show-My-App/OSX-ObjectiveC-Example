@@ -32,14 +32,23 @@
     [tShowMyAppInstance setDesign:[designSegmentedControl selectedSegment]];
     [tShowMyAppInstance setDesignColor:[designColor color]];
     [tShowMyAppInstance setDesignColorBackground:[designColorBackground color]];
+    [tShowMyAppInstance setTiny:[tinySwith state]];
+    [tShowMyAppInstance setOneIconOnly:[oneIconOnlySwith state]];
+    
+    [tShowMyAppInstance setReferencedUser:[referencedUserSwith state]];
+    [tShowMyAppInstance setReccordID:[reccordID stringValue]];
+    
     [tShowMyAppInstance setIOS_iPhone_BundleID:[iPhoneTextField stringValue]];
     [tShowMyAppInstance setIOS_iPad_BundleID:[iPadTextField stringValue]];
     [tShowMyAppInstance setMacOS_BundleID:[macOSTextField stringValue]];
     [tShowMyAppInstance setTvOS_BundleID:[tvOSTextField stringValue]];
+    
     [tShowMyAppInstance setAndroid_BundleID:[androidTextField stringValue]];
     [tShowMyAppInstance setAndroid_Tablet_BundleID:[androidTabletTextField stringValue]];
+    
     [tShowMyAppInstance setWindows_BundleID:[windowsTextField stringValue]];
     [tShowMyAppInstance setWindows_Phone_BundleID:[windowsPhoneTextField stringValue]];
+    
     [tShowMyAppInstance setSteam_BundleID:[windowsPhoneTextField stringValue]];
     //    [tShowMyAppInstance setTiny:[tinySwith ]];
     return tShowMyAppInstance;
@@ -70,7 +79,7 @@
     //NSLog(@" %s line %d",__FUNCTION__, __LINE__);
     if (ShowMyAppInstance!=NULL)
     {
-        [ShowMyAppInstance ShareFull:sSender Message:@"Try this App!"];
+        [ShowMyAppInstance ShareFull:sSender];
     }
 }
 
@@ -78,7 +87,7 @@
     //NSLog(@" %s line %d",__FUNCTION__, __LINE__);
     if (ShowMyAppInstance!=NULL)
     {
-        [ShowMyAppInstance ShareTiny:sSender Message:@"Try this App!"];
+        [ShowMyAppInstance ShareTiny:sSender];
     }
 }
 
